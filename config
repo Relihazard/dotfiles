@@ -1,0 +1,5 @@
+host bltest
+    hostname agr.test.bureauxlocaux.com
+    IdentityFile ~/.ssh/id_rsa
+    user agr
+    port 22
