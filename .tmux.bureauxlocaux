@@ -1,0 +1,22 @@
+#!/bin/zsh
+tmux new-session -d -s "dev" -n "django-server" -c "$HOME/Projects/bureauxlocaux"
+tmux new-window -c "$HOME/Projects/bureauxlocaux" -n "npm"
+tmux new-window -c "$HOME/Projects/bureauxlocaux" -n "shell"
+tmux new-window -c "$HOME/Projects/bureauxlocaux" -n "git"
+tmux new-window -c "$HOME/Projects/bureauxlocaux" -n "python-shell"
+tmux new-window -c "$HOME/Projects/bureauxlocaux" -n "tests"
+tmux new-window -c "$HOME/Projects/bureauxlocaux" -n "psql"
+tmux new-window -c "$HOME/Projects/bureauxlocaux" -n "ssh"
+tmux new-window -c "$HOME" -n "spt"
+tmux send-keys -t "dev:django-server" "source venv/bin/activate" Enter "source .env" Enter "clear" Enter
+tmux send-keys -t "dev:npm" "source venv/bin/activate" Enter "source .env" Enter "clear" Enter
+tmux send-keys -t "dev:shell" "source venv/bin/activate" Enter "source .env" Enter "clear" Enter
+tmux send-keys -t "dev:git" "source venv/bin/activate" Enter "source .env" Enter "clear" Enter
+tmux send-keys -t "dev:python-shell" "source venv/bin/activate" Enter "source .env" Enter "./manage.py shell_plus" Enter C-l
+tmux send-keys -t "dev:tests" "source venv/bin/activate" Enter "source .env" Enter "clear" Enter
+tmux send-keys -t "dev:psql" "psql -U buroloco buroloco" Enter C-l
+tmux send-keys -t "dev:ssh" "ssh bltest" Enter "clear" Enter
+tmux send-keys -t "dev:spt" "spt" Enter
+tmux select-window -t "dev:shell"
+tmux select-pane -t 1
+tmux attach-session -t "dev"
