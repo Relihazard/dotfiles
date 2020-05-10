@@ -1,0 +1,16 @@
+<application>
+  <component name="GraziConfig">
+    <option name="enabledLanguages">
+      <set>
+        <option value="English (US)" />
+        <option value="French" />
+      </set>
+    </option>
+    <option name="userDisabledRules">
+      <set>
+        <option value="PASSIVE_VOICE" />
+      </set>
+    </option>
+    <option name="lastSeenVersion" value="2019.3-6.2.stable" />
+  </component>
+</application>

@@ -2,13 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/relihazard/.oh-my-zsh"
+export ZSH="/home/relihazard/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="bira"
+ZSH_THEME="spaceship"
+SPACESHIP_PROMPT_DEFAULT_PREFIX="| "
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -68,7 +69,7 @@ ZSH_THEME="bira"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,15 +98,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias tmux.bureauxlocaux="~/.tmux.bureaulocaux"
+alias tmux.bureauxlocaux="~/.tmux.bureauxlocaux"
+alias ls="ls -1F --color=tty"
 
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
-source /usr/local//share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PAGER="less -Sr"
+export PATH=$PATH:$HOME/bin
 
-# Spaceship configuration
-SPACESHIP_PROMPT_DEFAULT_PREFIX='| '
-
-autoload -U promptinit; promptinit
-prompt spaceship
+source /home/relihazard/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
