@@ -1,7 +1,0 @@
-com.arcticicestudio.nord.jetbrains
-com.markskelton.one-dark-theme
-com.thvardhan.gradianto
-com.vincentp.gruvbox-theme
-krasa.CpuUsageIndicator
-name.kropp.intellij.makefile
-tanvd.grazi
