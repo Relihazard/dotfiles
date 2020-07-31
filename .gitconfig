@@ -1,6 +1,6 @@
 [user]
 	name = Axel Grossmann
-	email = relihazard@gmail.com
+	email = axel.grossmann@bureauxlocaux.com
 	username = Relihazard
 [core]
 	editor = nvim
@@ -19,7 +19,8 @@
         }; f"
         new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
     ls = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit
-	fixup = commit --fixup
+    fixup = commit --fixup
+    stashl = stash list --color=always --pretty=format:'%C(green)%gd:%Cred %h %Creset %B %Cgreen<%ar>%Creset'
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
