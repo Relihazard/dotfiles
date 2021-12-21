@@ -1,35 +1,36 @@
 [user]
 	name = Axel Grossmann
-	email = axel.grossmann@bureauxlocaux.com
+	email = relihazard@gmail.com
 	username = Relihazard
 [core]
-	editor = nvim
+	editor = code -w
 	pager = less
 [alias]
 	co = checkout
 	st = status --short
 	ci = commit
 	br = branch
-        graph = log --oneline --decorate --graph
-        bclean = "!f() {\
-                            git fetch -p &&\
-                            for branch in\
-        `git branch -vv | grep ': gone]' | awk '{print $1}'`;\
-        do git branch -D $branch; done;\
-        }; f"
-        new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+	graph = log --oneline --decorate --graph
+	bclean = "!f() {\
+						git fetch -p &&\
+						for branch in\
+	`git branch -vv | grep ': gone]' | awk '{print $1}'`;\
+	do git branch -D $branch; done;\
+	}; f"
+	new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
     ls = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit
     fixup = commit --fixup
     stashl = stash list --color=always --pretty=format:'%C(green)%gd:%Cred %h %Creset %B %Cgreen<%ar>%Creset'
+	sw = switch
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 [diff]
-	tool = vimdiff
-[difftool "vimdiff"]
-	cmd = nvim -d $LOCAL $REMOTE $MERGED -c 'wincmd w' -c 'wincmd J'
+	tool = vscodediff
+[difftool "vscodediff"]
+	cmd = code --wait --diff $LOCAL $REMOTE
 [rebase]
 	autosquash = true
 [log]
